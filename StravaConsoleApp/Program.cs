@@ -1,3 +1,8 @@
 ﻿
 
-Console.WriteLine(  "Welcome to the Strava Console App"    );
+using StravaConsoleApp;
+
+ProgramUI programUI = new ProgramUI();
+
+programUI.RunApplication();
+
