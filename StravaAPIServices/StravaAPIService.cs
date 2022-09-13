@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using StravaAPIModels.Models;
+using System.Security.Cryptography.X509Certificates;
 
 namespace StravaAPIServices
 {
@@ -6,9 +7,9 @@ namespace StravaAPIServices
     {
         private readonly HttpClient _httpClient = new HttpClient();
 
-        public async Task<string> GetLoggedInAthlete(string url)
+        public async Task<LoggedInAthleteModel> GetLoggedInAthlete(string url)
         {
-            return await GetAsync<string>(url);
+            return await GetAsync<LoggedInAthleteModel>(url);
                 
         }
 
