@@ -24,7 +24,7 @@ namespace StravaConsoleApp
                 "Please select an option \n" +
                 "\n" +
                 "1. View Athletes \n" +
-                "00. Exit");
+                "99. Exit");
         }
 
         public void RunApplication()
