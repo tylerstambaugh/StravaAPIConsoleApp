@@ -79,7 +79,7 @@ namespace StravaConsoleApp
             string token = "26b86566f24646668e34df9dc233a0521078e716";
             LoggedInAthleteModel loggedInAthlete =_stravaApiService.GetLoggedInAthlete(token).Result;
 
-            Console.WriteLine(loggedInAthlete.ToString());
+            Console.WriteLine($"{loggedInAthlete.firstname} {loggedInAthlete.lastname}");
 
             Console.WriteLine();
         }

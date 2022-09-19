@@ -27,7 +27,7 @@
         public string measurement_preference { get; set; }
         public List<object> clubs { get; set; }
         public object ftp { get; set; }
-        public int weight { get; set; }
+        public double weight { get; set; }
         public List<Bike> bikes { get; set; }
         public List<Shoe> shoes { get; set; }
     }
