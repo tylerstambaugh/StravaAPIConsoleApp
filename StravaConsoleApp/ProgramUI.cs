@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StravaAPIModels.Models;
+using StravaAPIServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
@@ -9,7 +11,7 @@ namespace StravaConsoleApp
 {
     public  class ProgramUI
     {
-
+        StravaAPIService _stravaApiService = new StravaAPIService();
         public void Run()
         {
             {
@@ -71,7 +73,15 @@ namespace StravaConsoleApp
 
         private void ViewAthletes()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Please enter the athlete ID you'd like to view and press enter:");
+
+            var userInput = Console.ReadLine();
+            string token = "26b86566f24646668e34df9dc233a0521078e716";
+            LoggedInAthleteModel loggedInAthlete =_stravaApiService.GetLoggedInAthlete(token).Result;
+
+            Console.WriteLine(loggedInAthlete.ToString());
+
+            Console.WriteLine();
         }
     }
 }
