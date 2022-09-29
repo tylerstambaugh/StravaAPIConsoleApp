@@ -76,7 +76,7 @@ namespace StravaConsoleApp
             Console.WriteLine("Please enter the athlete ID you'd like to view and press enter:");
 
             var userInput = Console.ReadLine();
-            string token = "26b86566f24646668e34df9dc233a0521078e716";
+            string token = "";
             LoggedInAthleteModel loggedInAthlete =_stravaApiService.GetLoggedInAthlete(token).Result;
 
             Console.WriteLine($"{loggedInAthlete.firstname} {loggedInAthlete.lastname}");
