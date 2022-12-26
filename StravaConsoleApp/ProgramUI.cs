@@ -94,9 +94,14 @@ namespace StravaConsoleApp
 
             var userInput = Console.ReadLine();
             string token = "45fdaf3307debbee41dcd03bf86ca30307d94d0d";
-            List<AthleteActivity> athleteActivityModel = _stravaApiService.GetAthleteActivity(token).Result;
+            List<AthleteActivity> athleteActivityModelList = _stravaApiService.GetAthleteActivity(token).Result;
 
-            Console.WriteLine($"Total Activities returned{athleteActivityModel.Count}");
+            foreach(AthleteActivity activity in athleteActivityModelList)
+            {
+
+            }
+
+            Console.WriteLine($"Total Activities returned{athleteActivityModelList.Count}");
 
             Console.WriteLine();
         }
