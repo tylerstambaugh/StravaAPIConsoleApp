@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StravaConsoleApp
 {
-    public  class ProgramUI
+    public class ProgramUI
     {
         StravaAPIService _stravaApiService = new StravaAPIService();
         public void Run()
@@ -26,6 +26,7 @@ namespace StravaConsoleApp
                 "Please select an option \n" +
                 "\n" +
                 "1. View Athletes \n" +
+                "2. View Athlete Activities \n" +
                 "99. Exit");
         }
 
@@ -33,15 +34,18 @@ namespace StravaConsoleApp
         {
             bool runApplication = true;
 
-            while(runApplication)
+            while (runApplication)
             {
                 DisplayMenu();
                 var userInput = Console.ReadLine();
 
-                switch(userInput)
+                switch (userInput)
                 {
                     case "1":
                         ViewAthletes();
+                        break;
+                    case "2":
+                        ViewAthleteActivity();
                         break;
                     case "99":
                         if (ConfirmExit())
@@ -49,7 +53,7 @@ namespace StravaConsoleApp
                             runApplication = false;
                         }
                         break;
-                     default:
+                    default:
                         InvalidSelection();
                         break;
                 }
@@ -76,10 +80,23 @@ namespace StravaConsoleApp
             Console.WriteLine("Please enter the athlete ID you'd like to view and press enter:");
 
             var userInput = Console.ReadLine();
-            string token = "";
-            LoggedInAthleteModel loggedInAthlete =_stravaApiService.GetLoggedInAthlete(token).Result;
+            string token = "45fdaf3307debbee41dcd03bf86ca30307d94d0d";
+            LoggedInAthleteModel loggedInAthlete = _stravaApiService.GetLoggedInAthlete(token).Result;
 
             Console.WriteLine($"{loggedInAthlete.firstname} {loggedInAthlete.lastname}");
+
+            Console.WriteLine();
+        }
+
+        private void ViewAthleteActivity()
+        {
+            Console.WriteLine("Please enter the athlete ID you'd like to view and press enter:");
+
+            var userInput = Console.ReadLine();
+            string token = "45fdaf3307debbee41dcd03bf86ca30307d94d0d";
+            List<AthleteActivity> athleteActivityModel = _stravaApiService.GetAthleteActivity(token).Result;
+
+            Console.WriteLine($"Total Activities returned{athleteActivityModel.Count}");
 
             Console.WriteLine();
         }

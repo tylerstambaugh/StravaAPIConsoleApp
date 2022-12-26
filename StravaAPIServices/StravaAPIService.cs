@@ -50,5 +50,25 @@ namespace StravaAPIServices
             return default;
         }
 
+        public async Task<List<AthleteActivity>> GetAthleteActivity(string token)
+        {
+            var u = "https://www.strava.com/api/v3/athlete/activities";
+           
+            var builder = new UriBuilder(u);
+            builder.Query = "before=1672504919&after=1641055319";
+            var url = builder.ToString();
+
+            _httpClient.DefaultRequestHeaders.Authorization =
+            new AuthenticationHeaderValue("Bearer", token);
+
+            HttpResponseMessage response = await _httpClient.GetAsync(url);
+
+            return (response.IsSuccessStatusCode && response.Content != null)
+                    ? await response.Content.ReadAsAsync<List<AthleteActivity>>()
+                    : null;
+
+
+        }
+
     }
 }

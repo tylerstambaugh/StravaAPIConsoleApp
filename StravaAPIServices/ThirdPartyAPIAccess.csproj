@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StravaAPIModels\StravaAPIModels.csproj" />
+    <ProjectReference Include="..\StravaAPIModels\StravaAPIModels.Library.csproj" />
   </ItemGroup>
 
 </Project>
