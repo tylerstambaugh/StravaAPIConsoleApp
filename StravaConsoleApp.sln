@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StravaConsoleApp", "StravaConsoleApp\StravaConsoleApp.csproj", "{0DE73F86-7AD4-4EAC-94CD-A01A96B4E569}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StravaAPIModels", "StravaAPIModels\StravaAPIModels.csproj", "{C6396EFD-7EDA-41C1-BF65-0EF1230923E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StravaAPIModels.Library", "StravaAPIModels\StravaAPIModels.Library.csproj", "{C6396EFD-7EDA-41C1-BF65-0EF1230923E9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThirdPartyAPIAccess", "StravaAPIServices\ThirdPartyAPIAccess.csproj", "{0FC2E18B-EED7-4591-B047-AE4DEB87C430}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StravaDAL", "StravaAPIRepo\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StravaInterfaces", "StravaAPIInterfaces\StravaInterfaces.csproj", "{E26BE871-D006-41AD-B12C-58C807A0C135}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StravaServices", "StravaServices\StravaServices.csproj", "{E0017084-235A-4ED0-B73E-4BAD7137F328}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StravaServices", "StravaServices\StravaServices.csproj", "{E0017084-235A-4ED0-B73E-4BAD7137F328}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
