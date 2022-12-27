@@ -1,5 +1,6 @@
 ﻿using StravaAPIModels.Models;
 using StravaAPIServices;
+using StravaDAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -12,11 +13,12 @@ namespace StravaConsoleApp
     public class ProgramUI
     {
         StravaAPIService _stravaApiService = new StravaAPIService();
+
         public void Run()
         {
             {
-                //seed data?
-
+                SeedData seeder = new SeedData();
+                seeder.Seed();
             }
         }
 
@@ -46,6 +48,9 @@ namespace StravaConsoleApp
                         break;
                     case "2":
                         ViewAthleteActivity();
+                        break;
+                    case "3":
+                        CheckToken();
                         break;
                     case "99":
                         if (ConfirmExit())
@@ -96,7 +101,7 @@ namespace StravaConsoleApp
             string token = "45fdaf3307debbee41dcd03bf86ca30307d94d0d";
             List<AthleteActivity> athleteActivityModelList = _stravaApiService.GetAthleteActivity(token).Result;
 
-            foreach(AthleteActivity activity in athleteActivityModelList)
+            foreach (AthleteActivity activity in athleteActivityModelList)
             {
 
             }
@@ -104,6 +109,11 @@ namespace StravaConsoleApp
             Console.WriteLine($"Total Activities returned{athleteActivityModelList.Count}");
 
             Console.WriteLine();
+        }
+
+        private void CheckToken()
+        {
+            Console.WriteLine($"Checking Token:");
         }
     }
 }

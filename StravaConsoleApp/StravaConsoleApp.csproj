@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StravaAPIRepo\StravaDAL.csproj" />
     <ProjectReference Include="..\StravaAPIServices\ThirdPartyAPIAccess.csproj" />
   </ItemGroup>
 
