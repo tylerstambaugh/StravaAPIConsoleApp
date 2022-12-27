@@ -25,15 +25,9 @@ namespace StravaAPIServices
         //Specific GET call
         public async Task<LoggedInAthleteModel> GetLoggedInAthlete(string token)
         {
-
             _httpClient.DefaultRequestHeaders.Authorization =
             new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.GetAsync("https://www.strava.com/api/v3/athlete");
-
-            //if(response.IsSuccessStatusCode)
-            //{
-            //    LoggedInAthleteModel loggedInAthlete = await response.Content.ReadAsAsync<LoggedInAthleteModel>();
-            //}
 
             return (response.IsSuccessStatusCode && response.Content != null)
                     ? await response.Content.ReadAsAsync<LoggedInAthleteModel>()

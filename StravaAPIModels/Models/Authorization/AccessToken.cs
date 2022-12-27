@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace StravaAPIModels.Library.Models.Authorization
 {
-    public class ShortLivedAccessToken
+    public class AccessToken
     {
         public int AthleteId { get; set; }
-        public bool Scope { get; set; }
-        public string Token { get; set; }
-        public DateTime ExpiresAt { get; set; }
+        public string? Token { get; set; }
+        public string? RefreshToken { get; set; }
+        public long ExpiresAt { get; set; }
+        public long ExpiresIn { get; set; }
     }
 }
